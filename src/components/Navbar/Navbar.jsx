@@ -47,9 +47,6 @@ const Navbar = () => {
                 <a href="#technologies">Technologies</a>
               </li>
               <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
-                <a href="#testimonials">Testimonials</a>
-              </li>
-              <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
                 <a href="#contact">Contact Me</a>
               </li>
             </ul>

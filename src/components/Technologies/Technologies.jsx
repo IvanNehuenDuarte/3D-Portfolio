@@ -84,7 +84,7 @@ const Technologies = () => {
     { position: [-1.2, 0, 0], index: 10 },
   ];
   return (
-    <div className="md:w-10/12 mx-auto w-11/12 py-10">
+    <div id="technologies" className="md:w-10/12 mx-auto w-11/12 py-10">
       <div>
         <div className="bg-gradient-to-r from-[#8f145d] to-[#bd4a4a] inline-block mb-6">
           <h2 className="text-3xl p-1">Technologies</h2>
