@@ -6,7 +6,7 @@ import { Loader } from "@react-three/drei";
 import About from "./components/About/About";
 import Project from "./components/Projects/Project";
 import ProjectMobile from "./components/Projects/ProjectMobile";
-import Technologies from "./components/Technologies/Technologies";
+// import Technologies from "./components/Technologies/Technologies";
 import Poster from "./components/Poster";
 import Contact from "./components/Contact/Contact";
 
@@ -40,7 +40,6 @@ function App() {
         ) : (
           <ProjectMobile />
         )}
-        <Technologies />
         <Poster />
         <Contact />
       </BrowserRouter>

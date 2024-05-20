@@ -15,7 +15,6 @@ export default {
   rules: {
     quotes: ["error", "double", { avoidEscape: true }],
     "jsx-quotes": ["error", "prefer-double"],
-    // Otras reglas de ESLint que necesites
   },
   settings: {
     react: {

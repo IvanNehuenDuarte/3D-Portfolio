@@ -1,5 +1,15 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, spring } from "framer-motion";
+
+import iconJs from "/javascript.png";
+import iconHtml from "/html-5.png";
+import iconCss from "/css-3.png";
+import iconNode from "/node-js.png";
+import iconExpress from "/express.png";
+import iconSql from "/sql.png";
+import iconMongo from "/mongodb.png";
+import iconReact from "/react.png";
+import iconThree from "/threejs.png";
 
 const LeftPart = () => {
   const container = {
@@ -16,6 +26,26 @@ const LeftPart = () => {
     hidden: { opacity: 0, x: 30 },
     show: { opacity: 1, x: 0, transition: { type: "spring" } },
   };
+
+  // Icono scroll down
+  const [showScrollDown, setShowScrollDown] = useState(false);
+  // Condición de si se muestra u oculta el icono
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setShowScrollDown(true);
+      } else {
+        setShowScrollDown(false);
+      }
+    };
+
+    // Ejecutamos si scroll está en Y = 0
+    handleScroll();
+    // Eliminamos icono una vez que haga escroll
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="relative md:mt-0 mt-16">
       <motion.div
@@ -53,24 +83,49 @@ const LeftPart = () => {
       >
         "The best error message is the one that never shows up." - Thomas Fuchs
       </motion.p>
-      <div className="scroll-down relative hidden ">
-        <p className="-rotate-90 absolute -bottom-24 -right-8 text-slate-300">
-          Scroll Down
-        </p>
-        <div className="absolute top-36 opacity-60 right-0 w-7 h-14 border-solid border-2 border-gray-500 rounded-2xl flex items-center justify-center">
-          <a href="#about">
-            <motion.div
-              className="w-3 h-3 bg-gradient-to-t from-[#fc6767] to-[#ec008c] rounded-full"
-              animate={{ y: [0, 16, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-            ></motion.div>
-          </a>
-        </div>
+      <div className="flex space-x-4 mt-5">
+        {[
+          iconJs,
+          iconHtml,
+          iconCss,
+          iconExpress,
+          iconNode,
+          iconReact,
+          iconThree,
+          iconSql,
+          iconMongo,
+        ].map((icon, index) => (
+          <motion.img
+            key={index}
+            src={icon}
+            alt={`Icon ${index + 1}`}
+            className="w-8 h8"
+            whileHover={{ scale: 1.5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          />
+        ))}
       </div>
+
+      {showScrollDown && (
+        <div className="scroll-down relative">
+          <p className="-rotate-90 absolute -bottom-24 -right-8 text-slate-300">
+            Scroll Down
+          </p>
+          <div className="absolute top-36 opacity-60 right-0 w-7 h-14 border-solid border-2 border-gray-500 rounded-2xl flex items-center justify-center">
+            <a href="#about">
+              <motion.div
+                className="w-3 h-3 bg-gradient-to-t from-[#fc6767] to-[#ec008c] rounded-full"
+                animate={{ y: [0, 16, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              ></motion.div>
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -18,6 +18,28 @@
   color-scheme: dark;
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: white;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
 .green-pink-gradient {
   background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
