@@ -29,6 +29,7 @@ const LeftPart = () => {
 
   // Icono scroll down
   const [showScrollDown, setShowScrollDown] = useState(false);
+
   // Condición de si se muestra u oculta el icono
   useEffect(() => {
     const handleScroll = () => {
@@ -41,10 +42,23 @@ const LeftPart = () => {
 
     // Ejecutamos si scroll está en Y = 0
     handleScroll();
+
     // Eliminamos icono una vez que haga escroll
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleScrollToSection = (event, target) => {
+    event.preventDefault();
+    const targetElement = document.querySelector(target);
+    if (targetElement) {
+      const yOffset = -100; // Ajusta este valor para cambiar el desplazamiento vertical
+      const y =
+        targetElement.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+      window.location.hash = target; // Actualizar la URL con el hash
+    }
+  };
 
   return (
     <div className="relative md:mt-0 mt-16">
@@ -112,7 +126,10 @@ const LeftPart = () => {
             Scroll Down
           </p>
           <div className="absolute top-36 opacity-60 right-0 w-7 h-14 border-solid border-2 border-gray-500 rounded-2xl flex items-center justify-center">
-            <a href="#about">
+            <a
+              href="#about"
+              onClick={(e) => handleScrollToSection(e, "#about")}
+            >
               <motion.div
                 className="w-3 h-3 bg-gradient-to-t from-[#fc6767] to-[#ec008c] rounded-full"
                 animate={{ y: [0, 16, 0] }}

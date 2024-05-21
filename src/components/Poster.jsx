@@ -19,9 +19,8 @@ const Poster = () => {
         </div>
         <div className="flex flex-col justify-center">
           <p className="xl:text-[13px] text-[10px] 2-10/12 mb-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui autem
-            id, facilis architecto quaerat laborum porro veniam itaque
-            repudiandae ipsum?
+            If you're looking for a dedicated and skilled developer to bring
+            your project to life, let's work together to achieve your goals!
           </p>
           <div className="w-32 h-10 flex items-center justify-center bg-white rounded-full">
             <a

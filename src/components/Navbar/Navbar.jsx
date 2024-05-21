@@ -3,19 +3,29 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isTopOfPage, setIsTopOfPage] = useState(false);
+  const [isTopOfPage, setIsTopOfPage] = useState(true); // Inicialmente en la parte superior de la página
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTopOfPage(true);
-        console.log(isTopOfPage);
-      }
-      if (window.scrollY !== 0) setIsTopOfPage(false);
+      setIsTopOfPage(window.scrollY === 0); // Verifica si estás en la parte superior de la página
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Manejar el clic en el enlace y ajustar el desplazamiento
+  const handleLinkClick = (event, target) => {
+    event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+    const targetElement = document.querySelector(target); // Seleccionar el elemento de destino
+    if (targetElement) {
+      const yOffset = -100; // Ajuste personalizado de desplazamiento
+      const y =
+        targetElement.getBoundingClientRect().top + window.scrollY + yOffset; // Calcular la posición de desplazamiento
+      window.scrollTo({ top: y, behavior: "smooth" }); // Desplazarse suavemente a la posición deseada
+      window.location.hash = target;
+    }
+  };
   return (
     <section className="navbar">
       <div
@@ -40,16 +50,28 @@ const Navbar = () => {
               }`}
             >
               <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
-                <a href="#about">About</a>
+                <a href="#about" onClick={(e) => handleLinkClick(e, "#about")}>
+                  About
+                </a>
               </li>
               <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
-                <a href="#projects">Projects</a>
+                <a
+                  href="#projects"
+                  onClick={(e) => handleLinkClick(e, "#projects")}
+                >
+                  Projects
+                </a>
               </li>
               {/* <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
                 <a href="#technologies">Technologies</a>
               </li>   */}
               <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
-                <a href="#contact">Contact Me</a>
+                <a
+                  href="#contact"
+                  onClick={(e) => handleLinkClick(e, "#contact")}
+                >
+                  Contact Me
+                </a>
               </li>
             </ul>
           </div>
