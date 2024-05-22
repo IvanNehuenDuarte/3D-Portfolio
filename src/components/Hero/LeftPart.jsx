@@ -12,6 +12,8 @@ import iconSql from "/sql.png";
 import iconMongo from "/mongodb.png";
 import iconReact from "/react.png";
 import iconThree from "/threejs.png";
+import iconGithub from "/github.png";
+import iconLinkedin from "/linkedin.png";
 
 // EN-ES ============================>
 import { useTranslation } from "react-i18next";
@@ -110,29 +112,62 @@ const LeftPart = () => {
       >
         {t("left.phrase")}
       </motion.p>
-      <div className="flex space-x-4 mt-5">
-        {[
-          iconJs,
-          iconHtml,
-          iconCss,
-          iconExpress,
-          iconNode,
-          iconReact,
-          iconThree,
-          iconSql,
-          iconMongo,
-        ].map((icon, index) => (
-          <motion.img
-            key={index}
-            src={icon}
-            alt={`Icon ${index + 1}`}
-            className="w-8 h8"
-            whileHover={{ scale: 1.5 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          />
-        ))}
+      <div className="mt-5">
+        <span className="text-blue-500 underline">Technologies</span>
+        <div className="flex space-x-4 mt-5">
+          {[
+            iconJs,
+            iconHtml,
+            iconCss,
+            iconExpress,
+            iconNode,
+            iconReact,
+            iconThree,
+            iconSql,
+            iconMongo,
+          ].map((icon, index) => (
+            <motion.img
+              key={index}
+              src={icon}
+              alt={`Icon ${index + 1}`}
+              className="w-8 h-8"
+              whileHover={{ scale: 1.5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+          ))}
+        </div>
       </div>
-
+      <div className="mt-5">
+        <span className="text-pink-500 underline">Social Media</span>
+        <div className="flex space-x-4 mt-3">
+          <a
+            href="https://github.com/IvanNehuenDuarte?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.img
+              src={iconGithub}
+              alt={"GitHub"}
+              className="w-8 h-8"
+              whileHover={{ scale: 1.5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/iv%C3%A1n-nehuen-duarte/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.img
+              src={iconLinkedin}
+              alt={"Linkedin"}
+              className="w-8 h-8"
+              whileHover={{ scale: 1.5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+          </a>
+        </div>
+      </div>
       {showScrollDown && (
         <div className="scroll-down relative">
           <p className="-rotate-90 absolute -bottom-24 -right-8 text-slate-300">
