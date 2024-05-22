@@ -1,8 +1,18 @@
+// PACKAGES ============================>
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
 
+// EN-ES ============================>
+import { useTranslation } from "react-i18next";
+
 const Poster = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lgn) => {
+    i18n.changeLanguage(lgn);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -14,20 +24,19 @@ const Poster = () => {
     >
       <div className="grid sm:grid-cols-2 p-8 mb-5">
         <div className="w-10/12 mx-auto flex flex-col justify-center xl:text-4xl text-3xl">
-          <span>I'M AVAILABLE</span>
-          <span>FOR FREELANCE WORK</span>
+          <span>{t("poster.title")}</span>
+          <span>{t("poster.title2")}</span>
         </div>
         <div className="flex flex-col justify-center">
           <p className="xl:text-[13px] text-[10px] 2-10/12 mb-5">
-            If you're looking for a dedicated and skilled developer to bring
-            your project to life, let's work together to achieve your goals!
+            {t("poster.desc")}
           </p>
           <div className="w-32 h-10 flex items-center justify-center bg-white rounded-full">
             <a
               href="#contact"
               className="text-[#301934] flex items-center justify-between xl:text-base text-[12px]"
             >
-              Hire me <AiOutlineArrowRight />
+              {t("poster.btn")} <AiOutlineArrowRight />
             </a>
           </div>
         </div>

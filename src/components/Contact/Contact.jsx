@@ -1,6 +1,10 @@
+// PACKAGES ============================>
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+
+// EN-ES ============================>
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const form = useRef();
@@ -26,6 +30,13 @@ const Contact = () => {
       );
   };
 
+  //** Translation */
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const container = {
     hidden: { opacity: 0, x: 100 },
     show: {
@@ -45,7 +56,7 @@ const Contact = () => {
     <div className="mb-20" id="contact">
       <div className="md:w-10/12 w-11/12 mx-auto">
         <div className="pink-text-gradient inline-block mb-12">
-          <h2 className="text-4xl p-2 px-1">Contact Me</h2>
+          <h2 className="text-4xl p-2 px-1">{t("contact.title")}</h2>
         </div>
         <div className="md:w-8/12 w-full mx-auto">
           <motion.div
@@ -55,10 +66,10 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl text-white mb-5"
           >
-            Get In Touch &#128075;
+            {t("contact.title2")} &#128075;
           </motion.div>
           <p className="text-xl text-neutral-200 mb-5">
-            My Email:{" "}
+            {t("contact.my_email")}:{" "}
             <span className="italic text-sm text-neutral-400">
               ivan.nehuen.duarte@gmail.com
             </span>
@@ -78,7 +89,7 @@ const Contact = () => {
               className="grid sm:grid-cols-2 grid-cols-1 sm:gap-20 gap-6"
             >
               <div className="flex flex-col space-y-4">
-                <label htmlFor="">Your Name</label>
+                <label htmlFor="">{t("contact.your_name")}</label>
                 <input
                   type="text"
                   placeholder="Iván"
@@ -88,7 +99,7 @@ const Contact = () => {
                 />
               </div>
               <div className="flex flex-col space-y-4">
-                <label htmlFor="">Your Email</label>
+                <label htmlFor="">{t("contact.your_email")}</label>
                 <input
                   type="text"
                   placeholder="test@gmail.com"
@@ -99,7 +110,7 @@ const Contact = () => {
               </div>
             </motion.div>
             <motion.div variants={item} className="flex flex-col mt-10">
-              <label htmlFor="">Message</label>
+              <label htmlFor="">{t("contact.message")}</label>
               <textarea
                 name="message"
                 id=""

@@ -1,6 +1,10 @@
+// PACKAGES ============================>
 import React from "react";
 import { motion } from "framer-motion";
 import { useSpring, animated } from "@react-spring/web";
+
+// EN-ES ============================>
+import { useTranslation } from "react-i18next";
 
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s}) translateZ(${s}px)`;
@@ -49,14 +53,21 @@ const Project = () => {
     "/",
   ];
 
+  //** Translation */
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lgn) => {
+    i18n.changeLanguage(lgn);
+  };
+
   return (
     <div id="projects" className="w-11/12 md:w-10/12 mx-auto mt-32 mb-40">
       <div className="text-center mb-20">
         <span className="border-b-2 text-4xl pink-text-gradient border-pink-600">
-          Projects
+          {t("projects.title")}
         </span>
         <div className="mt-5 text-xl text-neutral-200">
-          My Works and Projects
+          {t("projects.desc")}
         </div>
       </div>
       <div className="w-11/12 md:w-11/12 max-auto">

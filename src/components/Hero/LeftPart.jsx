@@ -1,6 +1,8 @@
+// PACKAGES ============================>
 import React, { useEffect, useState } from "react";
 import { motion, spring } from "framer-motion";
 
+// PUBLIC ============================>
 import iconJs from "/javascript.png";
 import iconHtml from "/html-5.png";
 import iconCss from "/css-3.png";
@@ -10,6 +12,9 @@ import iconSql from "/sql.png";
 import iconMongo from "/mongodb.png";
 import iconReact from "/react.png";
 import iconThree from "/threejs.png";
+
+// EN-ES ============================>
+import { useTranslation } from "react-i18next";
 
 const LeftPart = () => {
   const container = {
@@ -60,6 +65,13 @@ const LeftPart = () => {
     }
   };
 
+  //** Translation */
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <div className="relative md:mt-0 mt-16">
       <motion.div
@@ -69,16 +81,17 @@ const LeftPart = () => {
         animate="show"
       >
         <motion.p variants={item} className="pink-text-gradient">
-          Hi there
+          {t("left.greeting")}
         </motion.p>
         <motion.h1 className="xl:text-5xl md:text-3xl text-3xl" variants={item}>
-          I'M <span className="blue-text-gradient">IVÁN</span>{" "}
+          {t("left.desc1")}{" "}
+          <span className="blue-text-gradient">{t("left.desc2")}</span>{" "}
         </motion.h1>
         <motion.h1 className="xl:text-5xl md:text-3xl text-3xl" variants={item}>
-          FULL STACK <span className="uppercase">developer</span>{" "}
+          {t("left.desc3")} <span className="uppercase">{t("left.desc4")}</span>{" "}
         </motion.h1>
         <motion.p className="text-sm italic mb-10" variants={item}>
-          with 1+ years of experience.{" "}
+          {t("left.experience")}.{" "}
         </motion.p>
       </motion.div>
       <motion.div
@@ -87,7 +100,7 @@ const LeftPart = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
-        <p>Hire me</p>
+        <p>{t("left.btn")}</p>
       </motion.div>
       <motion.p
         initial={{ opacity: 0 }}
@@ -95,7 +108,7 @@ const LeftPart = () => {
         transition={{ delay: 1 }}
         className="text-[12px] italic my-5 w-80 text-purple-300 "
       >
-        "The best error message is the one that never shows up." - Thomas Fuchs
+        {t("left.phrase")}
       </motion.p>
       <div className="flex space-x-4 mt-5">
         {[
@@ -123,7 +136,7 @@ const LeftPart = () => {
       {showScrollDown && (
         <div className="scroll-down relative">
           <p className="-rotate-90 absolute -bottom-24 -right-8 text-slate-300">
-            Scroll Down
+            {t("left.scroll")}
           </p>
           <div className="absolute top-36 opacity-60 right-0 w-7 h-14 border-solid border-2 border-gray-500 rounded-2xl flex items-center justify-center">
             <a

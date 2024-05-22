@@ -1,5 +1,12 @@
+// PACKAGES ============================>
 import Hamburger from "hamburger-react";
 import { useEffect, useState } from "react";
+
+// EN-ES ============================>
+import { useTranslation } from "react-i18next";
+
+// TRANSLATE ========================>
+import LanguageToggle from "../Translation/Translate.jsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +33,10 @@ const Navbar = () => {
       window.location.hash = target;
     }
   };
+
+  //** Translation */
+  const { t } = useTranslation();
+
   return (
     <section className="navbar">
       <div
@@ -50,8 +61,11 @@ const Navbar = () => {
               }`}
             >
               <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
+                <LanguageToggle />
+              </li>
+              <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
                 <a href="#about" onClick={(e) => handleLinkClick(e, "#about")}>
-                  About
+                  {t("nav.about")}
                 </a>
               </li>
               <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
@@ -59,18 +73,15 @@ const Navbar = () => {
                   href="#projects"
                   onClick={(e) => handleLinkClick(e, "#projects")}
                 >
-                  Projects
+                  {t("nav.projects")}
                 </a>
               </li>
-              {/* <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
-                <a href="#technologies">Technologies</a>
-              </li>   */}
               <li className="hover:text-[#ec008c] transition-all duration-200 ease-in cursor-pointer">
                 <a
                   href="#contact"
                   onClick={(e) => handleLinkClick(e, "#contact")}
                 >
-                  Contact Me
+                  {t("nav.contact")}
                 </a>
               </li>
             </ul>

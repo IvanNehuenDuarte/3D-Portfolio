@@ -1,0 +1,45 @@
+{
+    "nav": {
+        "about": "Acerca de",
+        "projects": "Proyectos",
+        "contact": "Contáctame"
+    },
+    "left": {
+        "greeting": "Hola",
+        "desc1": "SOY",
+        "desc2": "IVÁN",
+        "desc3": "DESARROLLADOR",
+        "desc4": "FULL STACK",
+        "experience": "con más de 1 año de experiencia.",
+        "btn": "Contrátame",
+        "phrase": "'El mejor mensaje de error es el que nunca aparece.' - Thomas Fuchs"
+    },
+    "about": {
+        "title": "Más sobre mí",
+        "iCan": "Puedo Desarrollar Cualquier Cosa Que",
+        "want": "Quieras",
+        "desc": "Como desarrollador full stack altamente capacitado, poseo un amplio conocimiento de las últimas tecnologías y marcos. Conozco muchos marcos como React, NextJS y tecnologías backend como NodeJS, Express, y tengo un buen conocimiento sobre ellos. Siempre trato de cumplir con todos los requisitos del cliente.",
+        "icon1": "Diseño Moderno",
+        "icon1Desc": "Desarrollo diseños modernos y responsivos, utilizando tecnologías y herramientas modernas.",
+        "icon2": "Resolución de Problemas",
+        "icon2Desc": "Competente en la resolución de problemas y experto en la coordinación con clientes para una gestión de proyectos eficaz y resultados exitosos."
+    },
+    "projects": {
+        "title": "Proyectos",
+        "desc": "Mis Trabajos y Proyectos"
+    },
+    "poster": {
+        "title": "ESTOY DISPONIBLE",
+        "title2": "PARA TRABAJO FREELANCE",
+        "desc": "Si buscas un desarrollador dedicado y hábil para llevar tu proyecto a la vida, ¡trabajemos juntos para lograr tus objetivos!",
+        "btn": "Contrátame"
+    },
+    "contact": {
+        "title": "Contáctame",
+        "title2": "Ponte en Contacto ",
+        "my_email": "Mi Correo: ivan.nehuen.duarte@gmail.com",
+        "your_name": "Tu Nombre",
+        "your_email": "Tu Correo",
+        "message": "Mensaje"
+    }
+}
