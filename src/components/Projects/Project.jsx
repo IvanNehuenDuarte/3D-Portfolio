@@ -42,15 +42,13 @@ const Project = () => {
   };
 
   const imageLinks = [
-    "https://hotel-booking-app-rose.vercel.app/",
     "https://next-js-portfolio-eight-lovat.vercel.app",
     "https://react-blog-app-delta.vercel.app",
     "https://hero-landing-page-mu.vercel.app",
     "https://ed-tech-responsive-website.vercel.app",
     "https://cafe-website-lemon.vercel.app",
-    "/",
-    "https://simple-portfolio-website-sigma.vercel.app",
-    "/",
+    "https://carrito-compras-react-1.netlify.app/",
+    "https://react-search-movie.netlify.app/",
   ];
 
   //** Translation */

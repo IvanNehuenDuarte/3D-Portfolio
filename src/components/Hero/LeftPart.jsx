@@ -103,7 +103,7 @@ const LeftPart = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
         >
-          <p className="">{t("left.btn")}</p>
+          <a href="#contact">{t("left.btn")}</a>
         </motion.div>
         <div className="flex items-center">
           <a
