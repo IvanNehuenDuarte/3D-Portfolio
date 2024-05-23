@@ -1,6 +1,6 @@
 // PACKAGES ============================>
 import React, { useEffect, useState } from "react";
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 
 // PUBLIC ============================>
 import iconJs from "/javascript.png";
@@ -96,14 +96,26 @@ const LeftPart = () => {
           {t("left.experience")}.{" "}
         </motion.p>
       </motion.div>
-      <motion.div
-        className="w-32 h-10 mt-16 bg-[#ec008c] hover:bg-pink-600 transition-all ease-in duration-200 rounded-xl flex items-center justify-center cursor-pointer"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-      >
-        <p>{t("left.btn")}</p>
-      </motion.div>
+      <div className="relative flex items-baseline">
+        <motion.div
+          className="w-32 h-10 mt-16 bg-[#ec008c] hover:bg-pink-600 transition-all ease-in duration-200 rounded-xl flex items-center justify-center cursor-pointer"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
+          <p className="">{t("left.btn")}</p>
+        </motion.div>
+        <div className="flex items-center">
+          <a
+            href="https://drive.google.com/file/d/1w0Ck_HrkME9cTwjbQpsoVV1XI02LGKwW/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 text-blue-500 underline cursor-pointer hover:text-pink-600"
+          >
+            CV
+          </a>
+        </div>
+      </div>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
