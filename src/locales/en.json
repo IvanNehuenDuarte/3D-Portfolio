@@ -13,8 +13,10 @@
         "experience": "with 1+ years of experience.",
         "btn": "Hire me",
         "phrase": "'The best error message is the one that never shows up.' - Thomas Fuchs",
+        "scroll": "Scroll Down",
+        "cv": "My Resume",
         "tech": "Technologies",
-        "scroll": "Scroll Down"
+        "social": "Social Media"
     },
     "about": {
         "title": "More about me",

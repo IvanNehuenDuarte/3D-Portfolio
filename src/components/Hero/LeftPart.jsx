@@ -112,7 +112,7 @@ const LeftPart = () => {
             rel="noopener noreferrer"
             className="ml-4 text-blue-500 underline cursor-pointer hover:text-pink-600"
           >
-            CV
+            {t("left.cv")}
           </a>
         </div>
       </div>
@@ -125,7 +125,7 @@ const LeftPart = () => {
         {t("left.phrase")}
       </motion.p>
       <div className="mt-5">
-        <span className="text-blue-500 underline">Technologies</span>
+        <span className="text-blue-500 underline">{t("left.tech")}</span>
         <div className="flex space-x-4 mt-5">
           {[
             iconJs,
@@ -150,7 +150,7 @@ const LeftPart = () => {
         </div>
       </div>
       <div className="mt-5">
-        <span className="text-pink-500 underline">Social Media</span>
+        <span className="text-pink-500 underline">{t("left.social")}</span>
         <div className="flex space-x-4 mt-3">
           <a
             href="https://github.com/IvanNehuenDuarte?tab=repositories"
