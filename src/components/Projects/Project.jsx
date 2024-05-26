@@ -16,7 +16,17 @@ const calc = (x, y) => {
 };
 
 const Project = () => {
-  const imageCount = 9;
+  const imageLinks = [
+    "https://next-js-portfolio-eight-lovat.vercel.app",
+    "https://nomeolvidomas.netlify.app/",
+    "https://hero-landing-page-mu.vercel.app",
+    "https://ed-tech-responsive-website.vercel.app",
+    "https://react-blog-app-delta.vercel.app/",
+    "https://carrito-compras-react-1.netlify.app/",
+    "https://react-search-movie.netlify.app/",
+  ];
+
+  const imageCount = imageLinks.length;
   const springConfig = { mass: 5, tension: 350, friction: 40 };
   const imageProps = Array.from({ length: imageCount }, () => {
     const [props, api] = useSpring(() => ({
@@ -40,16 +50,6 @@ const Project = () => {
     hidden: { opacity: 0, scale: 0 },
     show: { opacity: 1, scale: 1, transition: { type: "spring" } },
   };
-
-  const imageLinks = [
-    "https://next-js-portfolio-eight-lovat.vercel.app",
-    "https://react-blog-app-delta.vercel.app",
-    "https://hero-landing-page-mu.vercel.app",
-    "https://ed-tech-responsive-website.vercel.app",
-    "https://cafe-website-lemon.vercel.app",
-    "https://carrito-compras-react-1.netlify.app/",
-    "https://react-search-movie.netlify.app/",
-  ];
 
   //** Translation */
   const { t, i18n } = useTranslation();
