@@ -30,7 +30,21 @@
     },
     "projects": {
         "title": "Projects",
-        "desc": "My Works and Projects"
+        "desc": "My Works and Projects",
+        "list": [
+            {
+                "url": "https://nomeolvidomas.netlify.app/",
+                "desc": "(TODO APP) built using the MERN stack. The application allows users to create, read, update, and delete tasks, providing an efficient solution for personal organization."
+            },
+            {
+                "url": "https://carrito-compras-react-1.netlify.app/",
+                "desc": "Shopping cart application developed with React, leveraging componentization, context, hooks, and JSON mocks to simulate the product list."
+            },
+            {
+                "url": "https://react-search-movie.netlify.app/",
+                "desc": "Movie search application developed with React, leveraging componentization, hooks, and JSON mocks to simulate the product list."
+            }
+        ]
     },
     "poster": {
         "title": "I'M AVAILABLE",

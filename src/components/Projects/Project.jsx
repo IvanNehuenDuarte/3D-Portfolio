@@ -16,22 +16,6 @@ const calc = (x, y) => {
 };
 
 const Project = () => {
-  const imageLinks = [
-    "https://nomeolvidomas.netlify.app/",
-    "https://carrito-compras-react-1.netlify.app/",
-    "https://react-search-movie.netlify.app/",
-  ];
-
-  const imageCount = imageLinks.length;
-  const springConfig = { mass: 5, tension: 350, friction: 40 };
-  const imageProps = Array.from({ length: imageCount }, () => {
-    const [props, api] = useSpring(() => ({
-      xys: [0, 0, 1],
-      config: springConfig,
-    }));
-    return { props, api };
-  });
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -53,6 +37,21 @@ const Project = () => {
   const changeLanguage = (lgn) => {
     i18n.changeLanguage(lgn);
   };
+
+  const imageLinks = t("projects.list", { returnObjects: true });
+
+  //** Manejo de imagenes de proyectos */
+  const imageCount = imageLinks.length;
+
+  const springConfig = { mass: 5, tension: 350, friction: 40 };
+
+  const imageProps = Array.from({ length: imageCount }, () => {
+    const [props, api] = useSpring(() => ({
+      xys: [0, 0, 1],
+      config: springConfig,
+    }));
+    return { props, api };
+  });
 
   return (
     <div id="projects" className="w-11/12 md:w-10/12 mx-auto mt-32 mb-40">
@@ -76,12 +75,13 @@ const Project = () => {
             <motion.div
               key={index}
               variants={item}
-              className="w-full h-[250px] relative"
+              className="w-full relative flex flex-col items-center"
             >
               <a
-                href={imageLinks[index]}
+                href={imageLinks[index].url}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="w-full h-[250px] block"
               >
                 <animated.img
                   onMouseMove={(e) => {
@@ -90,11 +90,14 @@ const Project = () => {
                   }}
                   onMouseLeave={() => image.api.start({ xys: [0, 0, 1] })}
                   style={{ transform: image.props.xys.to(trans) }}
-                  className="object-cover object-left-top w-full h-full absolute"
+                  className="object-cover object-left-top w-full h-full"
                   src={`/project${index + 1}.png`}
                   alt=""
                 />
               </a>
+              <div className="text-center mt-2 text-neutral-200">
+                {imageLinks[index].desc}
+              </div>
             </motion.div>
           ))}
         </motion.div>

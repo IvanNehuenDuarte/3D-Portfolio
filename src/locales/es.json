@@ -30,7 +30,21 @@
     },
     "projects": {
         "title": "Proyectos",
-        "desc": "Mis Trabajos y Proyectos"
+        "desc": "Mis Trabajos y Proyectos",
+        "list": [
+            {
+                "url": "https://nomeolvidomas.netlify.app/",
+                "desc": "(TODO APP) construida utilizando el stack MERN. La aplicación permite a los usuarios crear, leer, actualizar y eliminar tareas, proporcionando una solución eficiente para la organización personal."
+            },
+            {
+                "url": "https://carrito-compras-react-1.netlify.app/",
+                "desc": "Aplicación de carrito de compras desarrollada con React, que aprovecha la componetización, context, hooks y mocks de JSON para simular la lista de productos."
+            },
+            {
+                "url": "https://react-search-movie.netlify.app/",
+                "desc": "Buscador de peliculas desarrollada con React, que aprovecha la componetización, hooks y mocks de JSON para simular la lista de productos."
+            }
+        ]
     },
     "poster": {
         "title": "ESTOY DISPONIBLE",

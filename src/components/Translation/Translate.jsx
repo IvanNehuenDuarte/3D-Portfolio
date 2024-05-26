@@ -1,7 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
