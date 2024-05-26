@@ -1,6 +1,6 @@
 // PACKAGES ============================>
 import React from "react";
-import { useSpring, animated } from "@react-spring/web";
+import { useSpring } from "@react-spring/web";
 
 // EN-ES ============================>
 import { useTranslation } from "react-i18next";
@@ -39,7 +39,7 @@ const ProjectMobile = () => {
       </div>
       <div className="w-full max-auto px-2">
         <div className="grid gap-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1">
-          {imageProps.map((index) => (
+          {imageProps.map((image, index) => (
             <div className="w-full h-[250px] relative" key={index}>
               <a
                 href={imageLinks[index].url}
