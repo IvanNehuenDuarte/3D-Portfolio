@@ -17,11 +17,7 @@ const calc = (x, y) => {
 
 const Project = () => {
   const imageLinks = [
-    "https://next-js-portfolio-eight-lovat.vercel.app",
     "https://nomeolvidomas.netlify.app/",
-    "https://hero-landing-page-mu.vercel.app",
-    "https://ed-tech-responsive-website.vercel.app",
-    "https://react-blog-app-delta.vercel.app/",
     "https://carrito-compras-react-1.netlify.app/",
     "https://react-search-movie.netlify.app/",
   ];
