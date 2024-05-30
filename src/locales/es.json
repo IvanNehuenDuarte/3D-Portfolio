@@ -43,6 +43,10 @@
             {
                 "url": "https://react-search-movie.netlify.app/",
                 "desc": "Buscador de peliculas desarrollada con React, que aprovecha la componetización, hooks y mocks de JSON para simular la lista de productos."
+            },
+            {
+                "url": "https://small-url-ivan.vercel.app/",
+                "desc": "Acortador de URL con alias personalizable, persistencia de datos en base de datos Mongo, eliminación y conteo de clicks"
             }
         ]
     },

@@ -43,6 +43,10 @@
             {
                 "url": "https://react-search-movie.netlify.app/",
                 "desc": "Movie search application developed with React, leveraging componentization, hooks, and JSON mocks to simulate the product list."
+            },
+            {
+                "url": "https://small-url-ivan.vercel.app/",
+                "desc": "URL shortener with customizable alias, data persistence in MongoDB, deletion, and click count"
             }
         ]
     },
