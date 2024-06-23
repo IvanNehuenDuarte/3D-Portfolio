@@ -107,7 +107,7 @@ const LeftPart = () => {
         </motion.div>
         <div className="flex items-center">
           <a
-            href="https://drive.google.com/file/d/1w0Ck_HrkME9cTwjbQpsoVV1XI02LGKwW/view?usp=sharing"
+            href="https://drive.google.com/file/d/1N3QZ-4sTSfvokGcdk5kS0AlLIG7xdHhE/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 text-blue-500 underline cursor-pointer hover:text-pink-600"
