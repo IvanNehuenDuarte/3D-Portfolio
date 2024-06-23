@@ -70,9 +70,6 @@ const Contact = () => {
           </motion.div>
           <p className="text-xl text-neutral-200 mb-5">
             {t("contact.my_email")}:{" "}
-            <span className="italic text-sm text-neutral-400">
-              ivan.nehuen.duarte@gmail.com
-            </span>
           </p>
           <motion.form
             ref={form}
